@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sal's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #fff0f5; /* Light pink background */
+            padding: 30px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(255, 105, 180, 0.15);
+            border: 1px solid #f8d7da;
+        }
+
+        h2 {
+            text-align: center;
+            color: #fe9ebd; /* Soft pink */
+            margin-bottom: 30px;
+            font-weight: 700;
+            font-size: 28px;
+            letter-spacing: 0.5px;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            font-weight: 600;
+            color:#ff4fa3; 
+;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: 1px solid #f4a8c5;
+            border-radius: 8px;
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #d63384;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            color: #555;
+            cursor: pointer;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 6px;
+            accent-color: #d63384;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        input[type="submit"],
+        .reset-btn {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        input[type="submit"] {
+            background-color: #ff4fa3;
+            color: white;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #c2185b;
+            transform: translateY(-2px);
+        }
+
+        .reset-btn {
+            background-color: #f8c4d8;
+            color: #ff4fa3;
+        }
+
+        .reset-btn:hover {
+            background-color: #f1a7c7;
+            transform: translateY(-2px);
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .form-group {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>💻 Appointment / Commission Form</h2>
+        <form action="#" method="POST">
+
+            <!-- Full Name -->
+            <div class="form-group">
+                <label for="nama">Full Name:</label>
+                <input type="text" id="nama" name="nama" placeholder="Enter your full name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password (for confirmation):</label>
+                <input type="password" id="password" name="password" placeholder="Create a secure password" required>
+            </div>
+
+            <!-- Commission Type / Job Type -->
+            <div class="form-group">
+                <label for="jenis_komisi">Type of Service:</label>
+                <select id="jenis_komisi" name="jenis_komisi" required>
+                    <option value="">-- Select Service Type --</option>
+                    <option value="website">Website Design & Development</option>
+                    <option value="graphic">Graphic Design (Poster, Logo, Branding)</option>
+                    <option value="uiux">UI/UX Design (Wireframe, Prototype)</option>
+                    <option value="mobile">Mobile App Design & Development</option>
+                </select>
+            </div>
+
+            <!-- Style or Approach Preference -->
+            <div class="form-group">
+                <label>Preferred Design Style / Approach:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gaya" value="modern" required> Modern & Minimalist</label>
+                    <label><input type="radio" name="gaya" value="vibrant"> Colorful & Vibrant</label>
+                    <label><input type="radio" name="gaya" value="corporate"> Corporate & Professional</label>
+                </div>
+            </div>
+
+            <!-- Additional Features -->
+            <div class="form-group">
+                <label>Additional Features (Optional):</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="fitur[]" value="responsive"> Responsive Design</label>
+                    <label><input type="checkbox" name="fitur[]" value="animation"> Micro-Interactions / Animations</label>
+                    <label><input type="checkbox" name="fitur[]" value="source"> Source Files Included</label>
+                    <label><input type="checkbox" name="fitur[]" value="revision"> 1 Free Revision</label>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group">
+                <label for="deskripsi">Detailed Project Description:</label>
+                <textarea id="deskripsi" name="deskripsi" rows="5" placeholder="Describe your project: goals, target audience, references, features, deadline, etc." required></textarea>
+            </div>
+
+            <!-- Submit & Reset Buttons -->
+            <div class="button-group">
+                <input type="submit" value="Submit Commission Request">
+                <button type="reset" class="reset-btn">Reset Form</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
